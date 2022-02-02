@@ -8,7 +8,7 @@ FROM alpine:3.13.3
 
 RUN mkdir /.ssh
 RUN chown nobody:nobody /.ssh
-
+RUN usermod -s /bin/sh nobody
 USER nobody:nobody
 
 COPY --from=builder /app /app
